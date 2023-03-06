@@ -83,7 +83,6 @@ def astar(start, targ):
             if i in visited or i.state == 3:
                 continue
             if i not in minheap:
-                # sometimes the parent nodes are getting stuck in an infinate loop
                 i.gcost = ((start.row-i.row)**2 + (start.col-i.col)**2)**(1/2.0)
                 i.hcost = ((targ.row-i.row)**2 + (targ.col-i.col)**2)**(1/2.0)
                 i.fcost = i.gcost + i.hcost
